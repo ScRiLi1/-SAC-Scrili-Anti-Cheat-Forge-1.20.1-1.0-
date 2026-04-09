@@ -1,0 +1,13 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        maven { url 'https://maven.minecraftforge.net/' }
+    }
+}
+
+rootProject.name = 'sac'
+
+include 'sac-core'
+include 'sac-forge'
+include 'sac-bukkit'
+include 'sac-test-client'

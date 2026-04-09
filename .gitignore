@@ -1,0 +1,22 @@
+# Gradle
+.gradle/
+build/
+*/build/
+out/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Forge run directories
+run/
+*/run/
+
+# Test client — не включаем в публичный релиз
+sac-test-client/
+sac/-test-client/
+
+# OS
+.DS_Store
+Thumbs.db

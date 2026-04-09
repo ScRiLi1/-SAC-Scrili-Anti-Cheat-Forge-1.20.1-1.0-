@@ -1,0 +1,52 @@
+general:
+  # Количество предупреждений до наказания
+  maxWarnings: 3
+  # Действие при достижении лимита: KICK, BAN, NONE
+  punishAction: KICK
+  # Отправлять уведомления о нарушениях онлайн-операторам
+  adminAlertsEnabled: true
+
+speed:
+  enabled: true
+  # Макс. горизонтальная скорость (блоков/тик)
+  maxSpeed: 0.9
+
+fly:
+  enabled: true
+  # Макс. тиков в воздухе без разрешения
+  maxFlyTicks: 60.0
+
+reach:
+  enabled: true
+  # Макс. дистанция удара (блоков)
+  maxReach: 4.0
+
+autoclicker:
+  enabled: true
+  # Макс. кликов в секунду
+  maxCps: 16
+
+scaffold:
+  enabled: true
+  # Макс. блоков в секунду
+  maxBlocksPerSecond: 6
+
+fastattack:
+  enabled: true
+  # Мин. интервал между ударами (мс)
+  minAttackIntervalMs: 100
+
+killaura:
+  enabled: true
+  # Кол-во подряд нарушений угла перед варном
+  angleViolationThreshold: 3
+  # Макс. угол между взглядом и целью при ударе (градусов)
+  maxAngle: 90.0
+
+modblacklist:
+  enabled: true
+  mods:
+    - wurst
+    - meteor-client
+    - baritone
+    - xray

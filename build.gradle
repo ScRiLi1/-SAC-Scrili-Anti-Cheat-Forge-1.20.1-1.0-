@@ -1,0 +1,17 @@
+// Root build — общие настройки для всех подмодулей
+plugins {
+    id 'java'
+}
+
+allprojects {
+    group = 'com.scrili.sac'
+    version = '1.0.0'
+}
+
+subprojects {
+    apply plugin: 'java'
+    java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+    compileJava.options.encoding = 'UTF-8'
+    javadoc.options.encoding = 'UTF-8'
+}
