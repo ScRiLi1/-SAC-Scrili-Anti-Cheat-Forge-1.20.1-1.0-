@@ -1,6 +1,9 @@
 # SAC — Scrili AntiCheat
 
-Античит для Minecraft 1.20.1 с поддержкой Forge и Bukkit/Spigot.
+перед презентацией античита, я был бы непротив добровольного пожертвования в мой проект :)
+https://boosty.to/scril1
+
+Античит для Minecraft 1.20.1 с поддержкой Forge.
 
 Создан для серверов на Forge
 
