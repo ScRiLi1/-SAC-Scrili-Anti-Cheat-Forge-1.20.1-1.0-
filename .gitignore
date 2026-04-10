@@ -16,6 +16,7 @@ run/
 # Test client — не включаем в публичный релиз
 sac-test-client/
 sac/-test-client/
+-test-client/
 
 # OS
 .DS_Store

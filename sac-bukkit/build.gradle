@@ -3,7 +3,7 @@ plugins {
 }
 
 group = 'com.scrili.sac'
-version = '1.0.0'
+version = '1.0.1'
 base.archivesName = 'sac-bukkit'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)

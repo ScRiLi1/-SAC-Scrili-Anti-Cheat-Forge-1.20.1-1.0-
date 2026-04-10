@@ -3,7 +3,7 @@ plugins {
     id 'eclipse'
 }
 
-version = '1.0.0'
+version = '1.0.1'
 group = 'com.scrili.sac'
 base.archivesName = 'sac-forge'
 
