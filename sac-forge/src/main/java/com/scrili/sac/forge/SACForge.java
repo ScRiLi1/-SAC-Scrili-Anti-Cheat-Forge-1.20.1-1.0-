@@ -37,6 +37,7 @@ public class SACForge {
     private void setup(FMLCommonSetupEvent event) {
         PacketHandler.register();
         core = new SACCore(new ForgeConfig());
+        setupAlertSender();
         AntiESP antiESP = new AntiESP();
         MinecraftForge.EVENT_BUS.register(antiESP);
         MinecraftForge.EVENT_BUS.register(new SACCommand());
@@ -45,7 +46,23 @@ public class SACForge {
     public static SACCore getCore() { return core; }
 
     public static void reloadCore() {
+        // Пересоздаём только конфиг-зависимые чеки, alert sender не трогаем
+        var oldSender = core.getPunishmentManager().getAlertSender();
         core = new SACCore(new ForgeConfig());
+        core.getPunishmentManager().setAlertSender(oldSender);
+    }
+
+    private static void setupAlertSender() {
+        core.getPunishmentManager().setAlertSender(message -> {
+            if (!core.getConfig().isAdminAlertsEnabled()) return;
+            var server = net.minecraftforge.server.ServerLifecycleHooks.getCurrentServer();
+            if (server == null) return;
+            for (ServerPlayer op : server.getPlayerList().getPlayers()) {
+                if (server.getPlayerList().isOp(op.getGameProfile())) {
+                    op.sendSystemMessage(net.minecraft.network.chat.Component.literal(message));
+                }
+            }
+        });
     }
 
     // --- тик-проверки ---
@@ -105,6 +122,10 @@ public class SACForge {
         // FastAttack
         if (core.getConfig().isFastAttackCheckEnabled())
             core.getFastAttackCheck().onAttack(fp);
+
+        // AutoClicker серверный подсчёт
+        if (core.getConfig().isAutoClickerCheckEnabled())
+            core.getAutoClickerCheck().onAttack(fp);
     }
 
     // --- Scaffold + Freecam/Place ---

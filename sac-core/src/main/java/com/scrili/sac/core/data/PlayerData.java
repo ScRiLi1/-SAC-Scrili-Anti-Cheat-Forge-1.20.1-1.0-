@@ -57,6 +57,8 @@ public class PlayerData {
 
     // AutoClicker
     public int lastReportedCps = 0;
+    public long serverCpsWindowStart = 0;
+    public int serverCpsCount = 0;
 
     // История варнов (последние 20)
     public final List<String> warnHistory = new ArrayList<>();
